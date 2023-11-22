@@ -1,4 +1,8 @@
 {
+  "name":"backend",
+  "scripts": {
+    "start":"node Index.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cloudinary": "^1.41.0",
