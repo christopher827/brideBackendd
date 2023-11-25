@@ -6,7 +6,7 @@ const app=express()
 const cloudinary = require("cloudinary");
 const connectDB=require("./db/database")
 app.use(cors({
-origin:["http://localhost:3000"],
+origin:["https://bride-frontend.vercel.app"],
 credentials:true,
 methods: ['GET', 'POST','PUT','DELETE'], // Specify the allowed HTTP methods
 }))
