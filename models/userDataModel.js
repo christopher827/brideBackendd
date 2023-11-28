@@ -48,7 +48,7 @@ const userDataSchema=new mongoose.Schema({
     nextOfKinAddress:{
         type:String,
     },
-    nextOfKinMaritalStatus:{
+    nextOfKinRelationship:{
         type:String,
     },
     nextOfKinPhoneNumber:{
