@@ -3,7 +3,6 @@ const router = express.Router();
 const Members=require("../models/userDataModel")
 const Admin=require("../models/AdminModel")
 const validator=require("validator")
-const nodemailer=require("nodemailer")
 const cloudinary = require("cloudinary");
 
 const jwt=require("jsonwebtoken")
@@ -11,7 +10,7 @@ const jwt=require("jsonwebtoken")
 router.post("/registerMembers",async(req,res)=>{
 
     try {
-        const {fullname,email,phoneNumber,gender,dateOfBirth,dateOfJoining,maritalStatus,address,nearestBustop,cellUnit,member,department,prayergroup,fellowship,nextOfKin,nextOfKinAddress,nextOfKinMaritalStatus,nextOfKinPhoneNumber,avatar}=req.body;   
+        const {fullname,email,phoneNumber,gender,dateOfBirth,dateOfJoining,maritalStatus,address,nearestBustop,cellUnit,member,department,prayergroup,fellowship,nextOfKin,nextOfKinAddress,nextOfKinRelationship,nextOfKinPhoneNumber,avatar}=req.body;   
 // if (!fullname || !email || !phoneNumber || !gender  || !dateOfBirth || !dateOfJoining || !maritalStatus || !address || !nearestBustop || !cellUnit || !member || !department || !prayerGroup || !fellowship || !nextOfKin || !nextOfKinAddress || !nextOfKinMaritalStatus || !nextOfKinPhoneNumber) {
 //     return res.status(400).json({message:"All fields must be filled"})
 // }
@@ -30,7 +29,7 @@ const myCloud = await cloudinary.v2.uploader.upload(avatar, {
     folder: "bridemembers",
   });
 
-    const user=await Members.create({fullname,email,phoneNumber,gender,dateOfBirth,dateOfJoining,maritalStatus,address,nearestBustop,cellUnit,member,department,prayergroup,fellowship,nextOfKin,nextOfKinAddress,nextOfKinMaritalStatus,nextOfKinPhoneNumber,      
+    const user=await Members.create({fullname,email,phoneNumber,gender,dateOfBirth,dateOfJoining,maritalStatus,address,nearestBustop,cellUnit,member,department,prayergroup,fellowship,nextOfKin,nextOfKinAddress,nextOfKinRelationship,nextOfKinPhoneNumber,      
         avatar: {
         public_id: myCloud.public_id,                  
         url: myCloud.secure_url,
