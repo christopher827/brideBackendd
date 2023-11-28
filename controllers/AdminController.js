@@ -52,7 +52,7 @@ router.get("/getMember/:id", async(req,res)=>{
 
         try {
             const id=req.params.id;
-const updatedMember = await Members.findByIdAndUpdate({_id:id},{fullname:req.body.name, email:req.body.email,phoneNumber:req.body.phoneNumber,gender:req.body.gender,dateOfBirth:req.body.dateOfBirth,dateOfJoining:req.body.dateJoined,maritalStatus:req.body.maritalStatus,address:req.body.address,nearestBustop:req.body.nearestBustop,cellUnit:req.body.cellUnit,member:req.body.member,department:req.body.department,prayergroup:req.body.prayergroup,fellowship:req.body.fellowship,nextOfKin:req.body.nextOfKin,nextOfKinAddress:req.body.nextOfKinAddress,nextOfKinMaritalStatus:req.body.nextOfKinMaritalStatus,nextOfKinPhoneNumber:req.body.nextOfKinPhoneNumber},{ new: true })       
+const updatedMember = await Members.findByIdAndUpdate({_id:id},{fullname:req.body.name, email:req.body.email,phoneNumber:req.body.phoneNumber,gender:req.body.gender,dateOfBirth:req.body.dateOfBirth,dateOfJoining:req.body.dateJoined,maritalStatus:req.body.maritalStatus,address:req.body.address,nearestBustop:req.body.nearestBustop,cellUnit:req.body.cellUnit,member:req.body.member,department:req.body.department,prayergroup:req.body.prayergroup,fellowship:req.body.fellowship,nextOfKin:req.body.nextOfKin,nextOfKinAddress:req.body.nextOfKinAddress,nextOfKinRelationship:req.body.nextOfKinRelationship,nextOfKinPhoneNumber:req.body.nextOfKinPhoneNumber},{ new: true })       
                         // .then(members=>res.json(members))
 
             res.status(201).json({
